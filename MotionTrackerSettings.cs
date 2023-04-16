@@ -61,8 +61,8 @@ namespace MotionTracker
 
         [Name("Animal Icon Scale")]
         [Description("Scale of animal icons")]
-        [Slider(0, 4)]
-        public float animalScale = 2.0f;
+        [Slider(0, 5)]
+        public float animalScale = 3.5f;
 
         [Name("Animal Icon Opacity")]
         [Description("Opacity of animal icons")]
