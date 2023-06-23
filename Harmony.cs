@@ -21,30 +21,42 @@ namespace MotionTracker
             if (__instance.m_AiSubType == AiSubType.Moose)
             {
                 __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Moose);
-            }
-           else if (__instance.m_AiSubType == AiSubType.Rabbit)
-            {
-                __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Rabbit);
-            }
+                return;
+            }           
             else if (__instance.m_AiSubType == AiSubType.Bear)
             {
                 __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Bear);
+                return;
             }
-            else if(__instance.m_AiSubType == AiSubType.Wolf && !__instance.IsTimberwolf())
-            {
-                __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Wolf);
-            }
-            else if (__instance.m_AiSubType == AiSubType.Wolf && __instance.IsTimberwolf())
+            else if(__instance.m_AiSubType == AiSubType.Wolf && (__instance.gameObject.name.Contains("grey") || __instance.gameObject.name.Contains("grey")))
             {
                 __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Timberwolf);
+                return;
+            }
+            else if (__instance.m_AiSubType == AiSubType.Wolf)
+            {             
+                __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Wolf);
+                return;
             }
             else if (__instance.m_AiSubType == AiSubType.Stag && !__instance.gameObject.name.Contains("_Doe"))
             {
                 __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Stag);
+                return;
             }
             else if (__instance.m_AiSubType == AiSubType.Stag && __instance.gameObject.name.Contains("_Doe"))
             {
                 __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Doe);
+                return;
+            }
+            else if (__instance.m_SnowImprintType == SnowImprintType.PtarmiganFootprint)
+            {
+                __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.PuffyBird);
+                return;
+            }
+            else if (__instance.m_AiSubType == AiSubType.Rabbit)
+            {
+                __instance.gameObject.AddComponent<PingComponent>().Initialize(PingManager.AnimalType.Rabbit);
+                return;
             }
         }
     }

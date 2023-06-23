@@ -5,7 +5,7 @@ using Il2CppInterop.Runtime.Injection;
 using System.Collections;
 using Il2Cpp;
 using System.Reflection;
-using static MotionTracker.PingManager;
+
 
 namespace MotionTracker
 {
@@ -86,7 +86,7 @@ namespace MotionTracker
                 animalPingPrefabs.Add(PingManager.AnimalType.Moose, GameObject.Instantiate(assetBundle.LoadAsset<GameObject>("moose"), prefabSafe.transform));
                 animalPingPrefabs.Add(PingManager.AnimalType.Stag, GameObject.Instantiate(assetBundle.LoadAsset<GameObject>("stag"), prefabSafe.transform));
                 animalPingPrefabs.Add(PingManager.AnimalType.Doe, GameObject.Instantiate(assetBundle.LoadAsset<GameObject>("doe"), prefabSafe.transform));
-
+                animalPingPrefabs.Add(PingManager.AnimalType.PuffyBird, GameObject.Instantiate(assetBundle.LoadAsset<GameObject>("ptarmigan"), prefabSafe.transform));
 
                 spraypaintPingPrefabs = new Dictionary<ProjectileType, GameObject>();
                 spraypaintPingPrefabs.Add(ProjectileType.SprayPaint_Direction, GameObject.Instantiate(assetBundle.LoadAsset<GameObject>("SprayPaint_Direction"), prefabSafe.transform));
@@ -116,7 +116,7 @@ namespace MotionTracker
             }
         }
 
-        public static GameObject GetAnimalPrefab(AnimalType animalType)
+        public static GameObject GetAnimalPrefab(PingManager.AnimalType animalType)
         {  
             return animalPingPrefabs[animalType];
         }

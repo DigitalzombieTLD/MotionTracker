@@ -13,7 +13,7 @@ namespace MotionTracker
         public PingManager(IntPtr intPtr) : base(intPtr)
         {
         }
-        public enum AnimalType {  Crow, Rabbit, Stag, Doe, Wolf, Timberwolf, Bear, Moose };
+        public enum AnimalType {  Crow, Rabbit, Stag, Doe, Wolf, Timberwolf, Bear, Moose, PuffyBird };
 
         public static bool isVisible = false;
         public static PingManager instance;

@@ -106,6 +106,10 @@ namespace MotionTracker
                 {
                     return true;
                 }
+                else if (animalType == PingManager.AnimalType.PuffyBird && Settings.options.showPuffyBirds)
+                {
+                    return true;
+                }
                 else
                 {
                     return false;

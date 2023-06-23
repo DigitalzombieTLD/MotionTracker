@@ -101,7 +101,9 @@ namespace MotionTracker
         [Description("Track motion of moose")]
         public bool showMoose = true;
 
-
+        [Name("Show Puffy Birds")]
+        [Description("Track motion of puffy birds")]
+        public bool showPuffyBirds = true;
 
 
         protected override void OnChange(FieldInfo field, object oldValue, object newValue)
